@@ -22,6 +22,9 @@ export function Player({ tracks }: PlayerProps) {
   const progressInterval = useRef<number | null>(null);
 
   const currentTrack = tracks[currentIndex];
+  const trackDuration = Math.max(currentTrack?.duration || 0, 1);
+  const clampedProgress = Math.min(Math.max(progress, 0), trackDuration);
+  const progressPercent = trackDuration > 0 ? (clampedProgress / trackDuration) * 100 : 0;
 
   useEffect(() => {
     if (!isPlaying) {
@@ -50,9 +53,29 @@ export function Player({ tracks }: PlayerProps) {
     };
   }, [isPlaying]);
 
+  useEffect(() => {
+    const player = playerRef.current;
+    if (!player || !isReady) return;
+
+    setProgress(0);
+    player.loadVideoById({ videoId: currentTrack.videoId, startSeconds: 0 });
+  }, [currentTrack.videoId, isReady]);
+
+  useEffect(() => {
+    const player = playerRef.current;
+    if (!player || !isReady) return;
+
+    if (isPlaying) {
+      player.playVideo();
+    } else {
+      player.pauseVideo();
+    }
+  }, [isPlaying, isReady]);
+
   const onReady = (event: YouTubeEvent) => {
     playerRef.current = event.target;
     setIsReady(true);
+    event.target.loadVideoById({ videoId: currentTrack.videoId, startSeconds: 0 });
   };
 
   const onStateChange = (event: YouTubeEvent) => {
@@ -204,14 +227,26 @@ export function Player({ tracks }: PlayerProps) {
             <span className="text-[10px] font-mono text-white/40 w-8 text-right">
               {formatTime(progress)}
             </span>
-            <input
-              type="range"
-              min={0}
-              max={currentTrack.duration || 100}
-              value={progress}
-              onChange={handleSeek}
-              className="flex-1 h-1 bg-white/10 rounded-full appearance-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-2 [&::-webkit-slider-thumb]:h-2 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full cursor-pointer focus:outline-none"
-            />
+            <div className="relative flex-1 h-2.5">
+              <div className="absolute inset-0 rounded-full bg-white/10" />
+              <div
+                className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-white/80 via-white/90 to-white"
+                style={{ width: `${progressPercent}%` }}
+              />
+              <span
+                className="absolute top-1/2 h-3.5 w-3.5 -translate-y-1/2 rounded-full bg-white shadow-[0_0_16px_rgba(255,255,255,0.9)]"
+                style={{ left: `calc(${progressPercent}% - 7px)` }}
+              />
+              <input
+                type="range"
+                min={0}
+                max={trackDuration}
+                value={clampedProgress}
+                onChange={handleSeek}
+                className="absolute inset-0 h-full w-full appearance-none cursor-pointer bg-transparent focus:outline-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-0 [&::-webkit-slider-thumb]:w-0 [&::-moz-range-thumb]:h-0 [&::-moz-range-thumb]:w-0 [&::-webkit-slider-runnable-track]:h-0 [&::-moz-range-track]:h-0"
+                aria-label="Seek song progress"
+              />
+            </div>
             <span className="text-[10px] font-mono text-white/40 w-8">
               {formatTime(currentTrack.duration)}
             </span>

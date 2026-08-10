@@ -32,15 +32,15 @@ export default async function Page() {
       <Presence />
 
       {/* Top Right: YouTube Music */}
-      <div className="fixed top-8 right-8 z-40">
+      <div className="fixed top-4 right-4 z-40 flex items-center justify-center">
         <Link
           href={youtubeUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white/60 hover:text-white transition-colors duration-300 flex items-center justify-center p-2"
+          className="text-white/60 hover:text-white transition-colors duration-300 flex h-8 w-8 items-center justify-center"
           aria-label="Open in YouTube Music"
         >
-          <Youtube className="w-6 h-6" strokeWidth={1.5} />
+          <Youtube className="h-5 w-5" strokeWidth={1.5} />
         </Link>
       </div>
 

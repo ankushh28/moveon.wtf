@@ -35,7 +35,7 @@ export function LocalTime() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 0.65 }}
       transition={{ duration: 1, delay: 0.5 }}
-      className="fixed top-8 left-8 text-white font-sans text-sm tracking-wide select-none z-40"
+      className="fixed top-4 left-4 z-40 flex items-center justify-center leading-none text-white font-sans text-sm tracking-wide select-none"
     >
       {format(time, 'h:mm a').toLowerCase()}
     </motion.div>
