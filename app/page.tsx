@@ -10,13 +10,13 @@ import { Metadata } from 'next';
 export const revalidate = 3600; // Cache for 1 hour
 
 export const metadata: Metadata = {
-  title: 'MoveOn — heartbreak, healing & the songs that hit different',
-  description:
-    'Late-night love, breakup energy, and the songs that feel too real. MoveOn is for the feelings you don’t post about but still replay on loop.',
+  title: 'notreachable.wtf',
+  description: 'archive of deleted files.',
 };
 
 export default async function Page() {
   const playlistData = await getPlaylistData();
+  const displayTracks = playlistData && playlistData.tracks.length > 1 ? playlistData.tracks.slice(1) : playlistData?.tracks ?? [];
 
   const playlistId = process.env.YOUTUBE_PLAYLIST_ID || 'PLts5vXm_Z8sVIrgQBMY7p4hTkUHdo_nxM';
   const youtubeUrl = `https://music.youtube.com/playlist?list=${playlistId}`;
@@ -57,8 +57,8 @@ export default async function Page() {
       </div>
 
       {/* Floating Player */}
-      {playlistData && playlistData.tracks.length > 0 && (
-        <Player tracks={playlistData.tracks} />
+      {displayTracks.length > 0 && (
+        <Player tracks={displayTracks} />
       )}
 
       {!playlistData && (
