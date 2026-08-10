@@ -1,0 +1,6 @@
+{
+  "name": "moveon.wtf",
+  "description": "A premium, cinematic, fullscreen music experience.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
