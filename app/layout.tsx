@@ -62,13 +62,13 @@ export const metadata: Metadata = {
         url: '/backimg.png',
         width: 1200,
         height: 630,
-        alt: 'notreachable.wtf banner',
+        alt: 'moveon.wtf banner',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'notreachable.wtf',
+    title: 'moveon.wtf',
     description:
       'Late-night love, breakup energy, and the songs that feel too real to ignore.',
     creator: '@moveonwtf',

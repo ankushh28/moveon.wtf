@@ -10,7 +10,7 @@ import { Metadata } from 'next';
 export const revalidate = 3600; // Cache for 1 hour
 
 export const metadata: Metadata = {
-  title: 'notreachable.wtf',
+  title: 'moveon.wtf',
   description: 'archive of deleted files.',
 };
 
