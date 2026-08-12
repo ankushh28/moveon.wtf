@@ -52,12 +52,12 @@ export function Presence() {
       {count !== null ? (
         <>
           <div className="w-1.5 h-1.5 rounded-full bg-[#2DD36F] shadow-[0_0_8px_#2DD36F] animate-pulse" />
-          <span>{count.toLocaleString()} healing tonight</span>
+          <span>{count.toLocaleString()} riders on the route</span>
         </>
       ) : (
         <>
           <div className="w-1.5 h-1.5 rounded-full bg-white/30" />
-          <span>listening together</span>
+          <span>route in motion</span>
         </>
       )}
     </motion.div>

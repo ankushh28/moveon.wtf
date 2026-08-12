@@ -26,35 +26,36 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://moveon.wtf'),
+  metadataBase: new URL('https://chuttanahihai.com'),
   title: {
-    default: 'MoveOn — heartbreak, healing & the songs that hit different',
-    template: '%s | MoveOn',
+    default: 'ChuttaNahiHai — nostalgia on every route',
+    template: '%s | ChuttaNahiHai',
   },
   description:
-    'Late-night love, breakup energy, and the songs that feel too real. MoveOn is for the feelings you don’t post about but still replay on loop.',
-  applicationName: 'MoveOn',
+    'A nostalgic Indian roadways bus playlist filled with the songs that made every crowded ride, dusty route, and long highway feel unforgettable.',
+  applicationName: 'ChuttaNahiHai',
   keywords: [
-    'MoveOn',
-    'breakup songs',
-    'love songs',
-    'heartbreak music',
-    'late night playlist',
-    'songs that hit different',
-    'healing music',
+    'ChuttaNahiHai',
+    'Indian bus playlist',
+    'nostalgia songs',
+    'bus journey music',
+    'road trip classics',
+    'old Hindi songs',
+    'highway memories',
+    'royal roadways vibe',
   ],
-  authors: [{ name: 'MoveOn' }],
-  creator: 'MoveOn',
-  publisher: 'MoveOn',
+  authors: [{ name: 'ChuttaNahiHai' }],
+  creator: 'ChuttaNahiHai',
+  publisher: 'ChuttaNahiHai',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'MoveOn — heartbreak, healing & the songs that hit different',
+    title: 'ChuttaNahiHai — nostalgia on every route',
     description:
-      'For the late-night feelings, the breakup spiral, the love that lingers, and the songs that keep replaying.',
-    url: 'https://moveon.wtf',
-    siteName: 'MoveOn',
+      'The sound of old Indian roadways memories: classic bus rides, dusty highways, and songs that still feel like home.',
+    url: 'https://chuttanahihai.com',
+    siteName: 'ChuttaNahiHai',
     type: 'website',
     locale: 'en_US',
     images: [
@@ -62,16 +63,16 @@ export const metadata: Metadata = {
         url: '/backimg.png',
         width: 1200,
         height: 630,
-        alt: 'moveon.wtf banner',
+        alt: 'ChuttaNahiHai banner',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'moveon.wtf',
+    title: 'ChuttaNahiHai',
     description:
-      'Late-night love, breakup energy, and the songs that feel too real to ignore.',
-    creator: '@moveonwtf',
+      'Nostalgic Indian roadways bus songs for every memory on the route.',
+    creator: '@chuttanahihai',
     images: ['/backimg.png'],
   },
   icons: {

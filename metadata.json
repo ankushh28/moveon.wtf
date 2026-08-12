@@ -1,6 +1,6 @@
 {
-  "name": "moveon.wtf",
-  "description": "A premium, cinematic, fullscreen music experience.",
+  "name": "ChuttaNahiHai",
+  "description": "A nostalgic Indian roadways bus playlist experience with classic songs from the route.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

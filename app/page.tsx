@@ -10,8 +10,8 @@ import { Metadata } from 'next';
 export const revalidate = 3600; // Cache for 1 hour
 
 export const metadata: Metadata = {
-  title: 'moveon.wtf',
-  description: 'archive of deleted files.',
+  title: 'ChuttaNahiHai',
+  description: 'nostalgia in motion — classic roadways bus playlist.',
 };
 
 export default async function Page() {
@@ -48,10 +48,10 @@ export default async function Page() {
       <div className="absolute inset-0 flex flex-col items-center justify-center z-30 pointer-events-none px-6 pt-10 pb-28 md:px-0 md:pt-0 md:pb-0">
         <div className="text-center -translate-y-2 md:-translate-y-6 max-w-[90vw] md:max-w-none">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-medium tracking-[0.12em] text-white/90 font-serif uppercase leading-none">
-            Forgotten
+            ChuttaNahiHai
           </h1>
           <p className="mt-3 md:mt-4 text-[9px] sm:text-[10px] md:text-xs tracking-[0.22em] md:tracking-[0.28em] text-white/50 uppercase font-sans">
-            archive of deleted files
+            nostalgia in every stop
           </p>
         </div>
       </div>
