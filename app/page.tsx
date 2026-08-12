@@ -45,7 +45,7 @@ export default async function Page() {
       </div>
 
       {/* Center Hero */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center z-30 pointer-events-none px-6 pt-10 pb-28 md:px-0 md:pt-0 md:pb-0">
+      {/* <div className="absolute inset-0 flex flex-col items-center justify-center z-30 pointer-events-none px-6 pt-10 pb-28 md:px-0 md:pt-0 md:pb-0">
         <div className="text-center -translate-y-2 md:-translate-y-6 max-w-[90vw] md:max-w-none">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-medium tracking-[0.12em] text-white/90 font-serif uppercase leading-none">
             ChuttaNahiHai
@@ -54,7 +54,7 @@ export default async function Page() {
             nostalgia in every stop
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* Floating Player */}
       {displayTracks.length > 0 && (
